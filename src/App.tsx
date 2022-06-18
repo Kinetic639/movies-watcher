@@ -1,13 +1,14 @@
 import React from 'react';
-import { Counter } from './redux/features/counter/Counter';
-import './App.css';
+// import {Routes, Route, useLocation, Navigate} from 'react-router-dom'
+import {Box, Typography} from "@mui/material";
 
-function App() {
+export const App = () =>  {
+    // const location = useLocation()
   return (
-    <div className="App">
-      <p>movie-watcher</p>
-    </div>
+      <Box component='main'>
+          <Typography variant="h6" gutterBottom component="div" > Test</Typography>
+      </Box>
+
   );
 }
 
-export default App;
