@@ -19,3 +19,10 @@ export interface MovieGenre {
     title: string;
     result: MovieEntity[]
 }
+
+export interface getMoviesQueryRes {
+    page: number;
+    results: MovieEntity[];
+    total_pages: number;
+    total_results: number
+}

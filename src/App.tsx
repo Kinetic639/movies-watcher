@@ -7,9 +7,9 @@ import {RootState} from './redux/app/store';
 import {getMoviesAsync} from "./redux/features/movies-slice";
 import {MoviesList} from "./components/movies/MoviesList/MoviesList";
 import {Banner} from "./components/Banner/Banner";
+import {useGetMoviesByGenresQuery} from "./redux/services/apiSlice";
 
 export const App = () => {
-    // const location = useLocation()
     const dispatch = useAppDispatch()
     const moviesList = useAppSelector((state: RootState) => state.movies)
 
@@ -19,10 +19,19 @@ export const App = () => {
             dispatch(getMoviesAsync())
         }
     }, [dispatch])
+    const {data, error, isLoading, isFetching, isSuccess} = useGetMoviesByGenresQuery()
     return (
         <Box component='main'>
-            <NavBar/>
-            <Banner moviesLists={moviesList.moviesLists}/>
+            {isLoading && <p>Loading</p>}
+            {error && <p>Something went wrong</p>}
+            {isSuccess && (
+                <>
+                    <NavBar/>
+                    <Banner moviesList={data.results}/>
+                </>
+
+            )
+            }
             <MoviesList moviesLists={moviesList.moviesLists}/>
         </Box>
 
