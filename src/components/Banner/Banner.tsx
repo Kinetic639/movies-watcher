@@ -6,7 +6,7 @@ import {getMoviesAsync} from "../../redux/features/movies-slice";
 import {useSelector} from "react-redux";
 
 interface Props {
-    moviesLists: MovieGenre[]
+    moviesList: MovieEntity[]
 }
 
 export const Banner = ({moviesLists}: Props) => {
