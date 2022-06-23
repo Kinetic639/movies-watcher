@@ -63,7 +63,7 @@ export const NavBar = () => {
         e.preventDefault()
         dispatch(searchMoviesAsync(searchInput))
         if (searchInput.length > 0) {
-            navigate(`/search?q=${searchInput}`, {replace: true});
+            navigate(`/search?query=${searchInput}`, {replace: true});
             // dispatch(fetchSearchResultsAsync(value));
         } else navigate(`/`, {replace: true});
     }

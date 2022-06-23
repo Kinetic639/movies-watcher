@@ -8,13 +8,14 @@ export const searchMoviesAsync = createAsyncThunk(
     async (string: string) => {
         const res = await
             fetch(`${requests.searchMovies}${string}`).then((res) => res.json())
-        return res
+        return {result: res, query: string}
     },
 );
 
 
 interface MoviesSliceState {
     searchedMovies: getMoviesQueryRes;
+    query: string;
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
     error: string | null;
 }
@@ -26,6 +27,7 @@ const initialState: MoviesSliceState = {
         total_pages: 0,
         total_results: 0
     },
+    query: '',
     status: 'idle',
     error: null,
 };
@@ -41,7 +43,8 @@ export const searchSlice = createSlice({
             })
             .addCase(searchMoviesAsync.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                state.searchedMovies = action.payload
+                state.searchedMovies = action.payload.result
+                state.query = action.payload.query
             })
             .addCase(searchMoviesAsync.rejected, (state, action) => {
                 state.status = 'failed';
