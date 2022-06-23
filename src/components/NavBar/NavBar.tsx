@@ -6,10 +6,12 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import {useEffect, useRef, useState} from "react";
-import {useNavigate} from 'react-router-dom';
+import {useEffect, useState} from "react";
+import {NavLink, useNavigate} from 'react-router-dom';
 import {useAppDispatch} from "../../redux/app/hooks";
 import {searchMoviesAsync} from "../../redux/features/search-slice";
+
+import './Navbar.scss'
 
 const Search = styled('div')(({theme}) => ({
     position: 'relative',
@@ -56,15 +58,12 @@ export const NavBar = () => {
     const dispatch = useAppDispatch()
     const [searchInput, setSearchInput] = useState("");
     const [showNavBarBackground, setShowNavBarBackground] = useState(true);
-    // const searchbarRef = useRef<HTMLDivElement>(document.createElement('div'));
-    // const searchInputRef = useRef<HTMLInputElement>(document.createElement('input'));
 
     const fetchResults = (e: React.SyntheticEvent) => {
         e.preventDefault()
-        dispatch(searchMoviesAsync(searchInput))
         if (searchInput.length > 0) {
+            dispatch(searchMoviesAsync(searchInput))
             navigate(`/search?query=${searchInput}`, {replace: true});
-            // dispatch(fetchSearchResultsAsync(value));
         } else navigate(`/`, {replace: true});
     }
 
@@ -105,6 +104,11 @@ export const NavBar = () => {
                     >
                         Movie Watcher App
                     </Typography>
+                    <Box sx={{padding: " 0 5vw"}}>
+                        <NavLink className='nav-link' to="/home">
+                            Home
+                        </NavLink>
+                    </Box>
                     <Box sx={{flexGrow: 1}}/>
                     <form onSubmit={fetchResults}>
                         <Search>

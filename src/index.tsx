@@ -6,7 +6,6 @@ import {App} from './App';
 import reportWebVitals from './reportWebVitals';
 import {CssBaseline} from "@mui/material";
 import {createTheme, ThemeProvider} from '@mui/material/styles';
-import {orange, teal} from '@mui/material/colors';
 import {BrowserRouter as Router} from 'react-router-dom'
 
 declare module '@mui/material/styles' {
@@ -43,7 +42,10 @@ const theme = createTheme({
         text: {
             primary: "#fff"
         },
-        primary: teal,
+        primary:
+            {
+                main: '#222222'
+            },
         secondary: {
             main: '#b2dfdb',
         },

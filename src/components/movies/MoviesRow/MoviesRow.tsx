@@ -1,9 +1,6 @@
-import React, {useRef, useState} from 'react';
-import Carousel from 'react-material-ui-carousel'
-import {Paper, Button} from '@mui/material'
+import React, {useRef} from 'react';
 import {MovieEntity} from "../../../types/typings";
 import Typography from "@mui/material/Typography";
-import IconButton from '@mui/material/IconButton';
 
 import './MoviesRow.scss'
 import {MovieCard} from "../MovieCard/MovieCard";

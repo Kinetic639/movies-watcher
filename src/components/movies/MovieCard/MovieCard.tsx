@@ -6,8 +6,6 @@ import {useAppSelector} from "../../../redux/app/hooks";
 import {Box, CircularProgress} from "@mui/material";
 import {
     modalFadeInUpVariants,
-    modalOverlayVariants,
-    modalVariants,
     posterFadeInVariants,
     staggerOne
 } from '../../../utils/motionUtils';
@@ -50,7 +48,6 @@ export const MovieCard = ({movie, row}: Props) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
     const fallbackTitle = movie.title || movie.original_title || movie.name || movie.original_name
-
     useEffect(() => {
         const currentMovieGenres = genresList.movieGenres.filter((item) => {
             return movie?.genre_ids.includes(item.id);
@@ -76,7 +73,7 @@ export const MovieCard = ({movie, row}: Props) => {
                 <Fade in={open}>
                     <Box sx={style}>
 
-                        <img className="modal__img" src={`${baseUrl}${movie.backdrop_path}`}/>
+                        <img alt={fallbackTitle} className="modal__img" src={`${baseUrl}${movie.backdrop_path}`}/>
                         <motion.div variants={staggerOne} initial="initial" animate="animate" exit="exit"
                                     className="modal__info--wrp">
                             <motion.h3 variants={modalFadeInUpVariants}
@@ -122,11 +119,12 @@ export const MovieCard = ({movie, row}: Props) => {
             </Modal>
             <motion.div
                 variants={posterFadeInVariants}
-                className={`poster ${row == 0 ? 'poster__large' : null}`}
+                className={`poster ${row === 0 ? 'poster__large' : null}`}
                 onClick={handleOpen}
             >
 
-                <img className="poster__img" src={`${baseUrl}${row == 0 ? movie.poster_path : movie.backdrop_path}`}/>
+                <img className="poster__img" alt={fallbackTitle}
+                     src={`${baseUrl}${row === 0 ? movie.poster_path : movie.backdrop_path}`}/>
 
                 <div className="poster__info">
                     <div className="poster__info--box-1">

@@ -1,5 +1,4 @@
 import React from 'react'
-import {MoviesListByGenre} from "../../../types/typings";
 import {MoviesRow} from "../MoviesRow/MoviesRow";
 
 import './MoviesList.scss'
