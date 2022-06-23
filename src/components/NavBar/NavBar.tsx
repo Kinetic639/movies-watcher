@@ -52,7 +52,7 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 }));
 
 export const NavBar = () => {
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const dispatch = useAppDispatch()
     const [searchInput, setSearchInput] = useState("");
     const [showNavBarBackground, setShowNavBarBackground] = useState(true);
@@ -62,10 +62,10 @@ export const NavBar = () => {
     const fetchResults = (e: React.SyntheticEvent) => {
         e.preventDefault()
         dispatch(searchMoviesAsync(searchInput))
-        // if (value.length > 0) {
-        //     history.push(`/search?q=${value}`);
-        //     // dispatch(fetchSearchResultsAsync(value));
-        // } else history.push("/browse");
+        if (searchInput.length > 0) {
+            navigate(`/search?q=${searchInput}`, {replace: true});
+            // dispatch(fetchSearchResultsAsync(value));
+        } else navigate(`/`, {replace: true});
     }
 
     const handleSearchInput = (event: React.ChangeEvent<HTMLInputElement>) => {

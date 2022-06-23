@@ -6,15 +6,11 @@ import {useGetMoviesByGenresQuery, useGetMoviesGenresQuery} from "../../redux/se
 import {useAppSelector} from "../../redux/app/hooks";
 import {CircularProgress} from "@mui/material";
 
-interface Props {
-    moviesList: MovieEntity[]
-}
-
 const truncate = (str: string, n: number) => {
     return str?.length > n ? str.substring(0, n - 1) + "..." : str;
 }
 
-export const Banner = ({moviesList}: Props) => {
+export const Banner = () => {
     const moviesLists = useAppSelector((state) => state.movies)
     const genresList = useAppSelector((state) => state.settings)
     const [randomMovie, setRandomMovie] = useState<MovieEntity>(moviesLists.moviesLists[0].result[Math.floor(Math.random() * 19)])

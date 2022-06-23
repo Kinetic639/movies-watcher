@@ -3,7 +3,7 @@ import {requests} from "../../config";
 import {MovieGenre} from "../../types/typings";
 
 export const getMoviesGenresAsync = createAsyncThunk(
-    'gifts/getGiftAsync',
+    'settings/getMoviesGenresAsync',
     async () => {
         const movieGenres = await
             fetch(requests.fetchGenres).then((res) => res.json())

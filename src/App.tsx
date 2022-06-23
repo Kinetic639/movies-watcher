@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react';
-// import {Routes, Route, useLocation, Navigate} from 'react-router-dom'
+import {Routes, Route, useLocation, Navigate} from 'react-router-dom'
 import {Box, CircularProgress} from "@mui/material";
 import {NavBar} from "./components/NavBar/NavBar";
 import {useAppDispatch, useAppSelector} from './redux/app/hooks';
 import {RootState} from './redux/app/store';
 import {getMoviesAsync} from "./redux/features/movies-slice";
-import {MoviesList} from "./components/movies/MoviesList/MoviesList";
-import {Banner} from "./components/Banner/Banner";
-import {useGetMoviesByGenresQuery} from "./redux/services/apiSlice";
 import {getMoviesGenresAsync} from "./redux/features/settings-slice";
+import {HomeView} from "./views/Home/HomeView";
+import {SearchResultsView} from "./views/SearchResultsView/SearchResultsView";
 
 export const App = () => {
+    const location = useLocation()
     const dispatch = useAppDispatch()
     const moviesList = useAppSelector((state: RootState) => state.movies)
     const settings = useAppSelector((state: RootState) => state.settings)
@@ -24,24 +24,21 @@ export const App = () => {
             dispatch(getMoviesGenresAsync())
         }
     }, [dispatch])
-    const {data, error, isLoading, isFetching, isSuccess} = useGetMoviesByGenresQuery()
+
+    // const {data, error, isLoading, isFetching, isSuccess} = useGetMoviesByGenresQuery()
 
     if (moviesList.status === 'loading' || settings.status === 'loading') {
         return <CircularProgress/>
     }
     return (
-        <Box component='main'>
-            {isLoading && <p>Loading</p>}
-            {error && <p>Something went wrong</p>}
-            {isSuccess && (
-                <>
-                    <NavBar/>
-                    <Banner moviesList={data.results}/>
-                </>
+        <Box component='main' key={location.pathname}>
+            <NavBar/>
 
-            )
-            }
-            <MoviesList moviesLists={moviesList.moviesLists}/>
+            <Routes>
+                <Route path="/" element={<Navigate replace to="/home"/>}/>
+                <Route path="/home" element={<HomeView/>}/>
+                <Route path="/search" element={<SearchResultsView/>}/>
+            </Routes>
         </Box>
 
     );
