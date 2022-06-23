@@ -15,7 +15,8 @@ export interface MovieEntity {
     "vote_count": number
 };
 
-export interface MovieGenre {
+
+export interface MoviesListByGenre {
     title: string;
     result: MovieEntity[]
 }
@@ -26,3 +27,13 @@ export interface getMoviesQueryRes {
     total_pages: number;
     total_results: number
 }
+
+export interface MovieGenre {
+    id: number;
+    name: string
+}
+
+export interface getMoviesGenresRes {
+    genres: MovieGenre[]
+}
+

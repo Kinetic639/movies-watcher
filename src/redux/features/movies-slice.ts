@@ -1,9 +1,9 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {requests} from "../../config";
-import {MovieEntity, MovieGenre} from "../../types/typings";
+import {MoviesListByGenre} from "../../types/typings";
 
 export const getMoviesAsync = createAsyncThunk(
-    'gifts/getGiftAsync',
+    'movies/getMoviesAsync',
     async () => {
         const [
             trendingNow,
@@ -39,7 +39,7 @@ export const getMoviesAsync = createAsyncThunk(
 
 
 interface MoviesSliceState {
-    moviesLists: MovieGenre[];
+    moviesLists: MoviesListByGenre[];
     status: 'idle' | 'loading' | 'succeeded' | 'failed';
     error: string | null;
 }

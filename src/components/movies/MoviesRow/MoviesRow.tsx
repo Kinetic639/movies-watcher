@@ -23,8 +23,6 @@ export const MoviesRow = ({title, movies, position}: Props) => {
 
     const HandleClick = (direction: string, position: number) => {
         const slider = document.getElementById(`slider-${position}`)
-        console.log('click')
-
         if (slider) {
             if (direction === 'left') {
                 slider.scrollLeft = slider.scrollLeft - 240

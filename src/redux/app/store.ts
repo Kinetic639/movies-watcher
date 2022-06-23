@@ -1,11 +1,13 @@
 import {configureStore, ThunkAction, Action} from '@reduxjs/toolkit';
 
+import settingsReducer from '../features/settings-slice'
 import moviesReducer from '../features/movies-slice'
 import {apiSlice} from "../services/apiSlice";
 
 export const store = configureStore({
     reducer: {
         movies: moviesReducer,
+        settings: settingsReducer,
         [apiSlice.reducerPath]: apiSlice.reducer
     },
 

@@ -1,0 +1,19 @@
+.banner {
+  height: 60vh;
+  object-fit: contain;
+
+  &__content {
+    margin-left: 30px;
+    padding-top: 140px;
+    height: 190px;
+  }
+
+  &__overview {
+    width: 45rem;
+    line-height: 1.6;
+    padding-top: 1rem;
+    font-size: .9rem;
+    max-width: 340px;
+    height: 80px;
+  }
+}

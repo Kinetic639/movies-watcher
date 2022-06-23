@@ -1,11 +1,11 @@
 import React from 'react'
-import {MovieGenre} from "../../../types/typings";
+import {MoviesListByGenre} from "../../../types/typings";
 import {MoviesRow} from "../MoviesRow/MoviesRow";
 
 import './MoviesList.scss'
 
 interface Props {
-    moviesLists: MovieGenre[]
+    moviesLists: MoviesListByGenre[]
 }
 
 export const MoviesList = ({moviesLists}: Props) => {
