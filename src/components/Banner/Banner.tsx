@@ -12,8 +12,8 @@ const truncate = (str: string, n: number) => {
 
 export const Banner = () => {
     const moviesLists = useAppSelector((state) => state.movies)
-    const genresList = useAppSelector((state) => state.settings)
     const [randomMovie, setRandomMovie] = useState<MovieEntity>(moviesLists.moviesLists[0].result[Math.floor(Math.random() * 19)])
+    const genresList = useAppSelector((state) => state.settings)
     const [genres, setGenres] = useState<MovieGenre[]>([])
 
 

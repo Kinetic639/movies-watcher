@@ -37,7 +37,7 @@ export const MoviesRow = ({title, movies, position}: Props) => {
 
     return (
         <div className='row'>
-            <Typography variant='h4'>{title}</Typography>
+            <Typography variant='h5'>{title}</Typography>
             <div className="row__slider">
                 <ArrowBackIosIcon
                     className='sliderArrow left'

@@ -4,6 +4,8 @@ export interface MovieEntity {
     "genre_ids": number[];
     "id": number;
     "original_language": string;
+    "name": string;
+    "original_name": string;
     "original_title": string;
     "overview": string;
     "popularity": number;
@@ -13,6 +15,7 @@ export interface MovieEntity {
     "video": boolean;
     "vote_average": number;
     "vote_count": number
+    "maturityRating": string;
 };
 
 

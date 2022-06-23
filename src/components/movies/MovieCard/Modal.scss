@@ -1,0 +1,71 @@
+.modal {
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__info {
+    &--wrp {
+      padding: 1em 1.5em;
+
+    }
+
+    &--title {
+      font-size: 22px;
+      line-height: 1.4;
+      font-weight: 600;
+      margin-bottom: 15px;
+
+    }
+
+    &--description {
+      font-size: 14px;
+      line-height: 1.7;
+
+    }
+
+    &--line {
+      border-color: rgba(121, 121, 121, 0.7);
+      margin: 1em 0;
+
+    }
+
+    &--otherTitle {
+      font-size: 16px;
+      line-height: 1.4;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    &--row {
+      display: flex;
+      font-size: 12px;
+      line-height: 1.6;
+      margin: .5em;
+      margin-left: 0;
+      word-break: break-word;
+
+      &-cell {
+        margin-right: 20px;
+      }
+
+      &-label {
+        color: #777;
+      }
+
+      &-description {
+        color: #ddd;
+      }
+    }
+  }
+}

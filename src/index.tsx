@@ -25,8 +25,16 @@ declare module '@mui/material/styles' {
 }
 
 const theme = createTheme({
-    status: {
-        danger: orange[500],
+    typography: {
+        fontFamily: [
+            'Inter',
+            'Roboto',
+            'Arial',
+            'sans-serif',
+            '"Apple Color Emoji"',
+            '"Segoe UI Emoji"',
+            '"Segoe UI Symbol"',
+        ].join(','),
     },
     palette: {
         background: {
