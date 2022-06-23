@@ -11,4 +11,5 @@ export const requests = {
     fetchRomanceMovies: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=10749`,
     fetchDocumentaries: `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=en-US&with_genres=99`,
     fetchGenres: `${BASE_URL}/genre/movie/list?api_key=${API_KEY}&language=en-US`,
+    searchMovies: `${BASE_URL}/search/movie?api_key=${API_KEY}&language=en-US&page=1&query=`,
 }

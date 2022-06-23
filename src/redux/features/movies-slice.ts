@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {requests} from "../../config";
-import {MoviesListByGenre} from "../../types/typings";
+import {getMoviesGenresRes, getMoviesQueryRes, MovieEntity, MoviesListByGenre} from "../../types/typings";
 
 export const getMoviesAsync = createAsyncThunk(
     'movies/getMoviesAsync',

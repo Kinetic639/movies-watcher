@@ -16,7 +16,7 @@ export const apiSlice = createApi({
         }),
         getMoviesGenres: builder.query<getMoviesGenresRes, void>({
             query: () => requests.fetchGenres
-        })
+        }),
     })
 })
 
