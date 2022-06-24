@@ -8,6 +8,7 @@ import {getMoviesAsync} from "./redux/features/movies-slice";
 import {getMoviesGenresAsync} from "./redux/features/settings-slice";
 import {HomeView} from "./views/Home/HomeView";
 import {SearchResultsView} from "./views/SearchResultsView/SearchResultsView";
+import {AnimatePresence} from "framer-motion";
 
 export const App = () => {
     const location = useLocation()
@@ -30,14 +31,15 @@ export const App = () => {
         return <CircularProgress/>
     }
     return (
-        <Box component='main' key={location.pathname}>
+        <Box component='main'>
             <NavBar/>
-
-            <Routes>
-                <Route path="/" element={<Navigate replace to="/home"/>}/>
-                <Route path="/home" element={<HomeView/>}/>
-                <Route path="/search" element={<SearchResultsView/>}/>
-            </Routes>
+            <AnimatePresence exitBeforeEnter>
+                <Routes location={location} key={location.pathname}>
+                    <Route path="/" element={<Navigate replace to="/home"/>}/>
+                    <Route path="/home" element={<HomeView/>}/>
+                    <Route path="/search" element={<SearchResultsView/>}/>
+                </Routes>
+            </AnimatePresence>
         </Box>
 
     );

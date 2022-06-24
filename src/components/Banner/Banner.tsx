@@ -4,6 +4,8 @@ import './Banner.scss'
 import {useAppSelector} from "../../redux/app/hooks";
 import {MovieEntity, MovieGenre} from "../../types/typings";
 import {CircularProgress} from "@mui/material";
+import {motion} from "framer-motion";
+import {bannerFadeInUpVariants, bannerFadeInVariants} from "../../utils/motionUtils";
 
 const truncate = (str: string, n: number) => {
     return str?.length > n ? str.substring(0, n - 1) + "..." : str;
@@ -48,17 +50,28 @@ export const Banner = () => {
     }
 
     return (
-        <div className='banner' style={{
+        <motion.header
+            variants={bannerFadeInVariants}
+            initial='initial'
+            animate='animate'
+            exit='exit'
+            className='banner' style={{
             backgroundImage: `url("https://image.tmdb.org/t/p/original${randomMovie?.backdrop_path}")`
         }}>
-            <div className="banner__content">
-                <h1 className='banner__content--title'>{randomMovie.title || randomMovie.original_title || randomMovie.name || randomMovie.original_name}</h1>
-                <p className='banner__content--description'>{truncate(randomMovie.overview, 150)}</p>
-                <div className='banner__content--genres'>{genres.map(genre => <p key={genre.id}
-                                                                                 className='banner__content--genres-item'>{genre.name}</p>)}</div>
+            <motion.div
+                variants={bannerFadeInUpVariants}
+                initial='initial'
+                animate='animate'
+                exit='exit'
+                className="banner__content">
+                <motion.h1
+                    className='banner__content--title'>{randomMovie.title || randomMovie.original_title || randomMovie.name || randomMovie.original_name}</motion.h1>
+                <motion.p className='banner__content--description'>{truncate(randomMovie.overview, 150)}</motion.p>
+                <motion.div className='banner__content--genres'>{genres.map(genre => <p key={genre.id}
+                                                                                        className='banner__content--genres-item'>{genre.name}</p>)}</motion.div>
 
-            </div>
+            </motion.div>
 
-        </div>
+        </motion.header>
     )
 }
