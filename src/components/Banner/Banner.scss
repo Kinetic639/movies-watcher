@@ -1,19 +1,95 @@
 .banner {
-  height: 60vh;
-  object-fit: contain;
+  position: relative;
+  height: 90vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 
   &__content {
-    margin-left: 30px;
-    padding-top: 140px;
-    height: 190px;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 4vw;
+    z-index: 1;
+
+    &--title {
+      font-size: 26px;
+      line-height: 1;
+      text-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.45);
+    }
+
+    &--description {
+      font-size: 16px;
+      line-height: 1.6;
+      text-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.45);
+      margin-top: 1rem;
+    }
+
+    &--genres {
+      display: flex;
+      font-size: 12px;
+      line-height: 1.6;
+      text-shadow: 2px 2px 4px rgba($color: black, $alpha: 0.45);
+
+      &-item {
+        margin-right: 30px;
+      }
+    }
   }
 
-  &__overview {
-    width: 45rem;
-    line-height: 1.6;
-    padding-top: 1rem;
-    font-size: .9rem;
-    max-width: 340px;
-    height: 80px;
+}
+
+@media only screen and (min-width: 768px) {
+  .banner {
+
+    &__content {
+      bottom: 20%;
+
+      &--title {
+        font-size: 40px;
+      }
+
+      &--description {
+        font-size: 20px;
+      }
+
+      &--genres {
+        font-size: 16px;
+
+        &-item {
+          margin-right: 30px;
+        }
+      }
+    }
+  }
+}
+
+
+@media only screen and (min-width: 1100px) {
+  .banner {
+
+    &__content {
+      bottom: 25%;
+
+      &--title {
+        font-size: 60px;
+      }
+
+      &--description {
+        font-size: 26px;
+      }
+
+      &--genres {
+        font-size: 20px;
+
+        &-item {
+          margin-right: 30px;
+        }
+      }
+    }
   }
 }

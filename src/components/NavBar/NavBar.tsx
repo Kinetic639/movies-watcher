@@ -102,7 +102,7 @@ export const NavBar = () => {
                         component="div"
                         sx={{display: {xs: 'none', sm: 'block'}}}
                     >
-                        Movie Watcher App
+                        Movie Watcher
                     </Typography>
                     <Box sx={{padding: " 0 5vw"}}>
                         <NavLink className='nav-link' to="/home">

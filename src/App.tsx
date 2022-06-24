@@ -25,7 +25,6 @@ export const App = () => {
         }
     }, [dispatch])
 
-    // const {data, error, isLoading, isFetching, isSuccess} = useGetMoviesByGenresQuery()
 
     if (moviesList.status === 'loading' || settings.status === 'loading') {
         return <CircularProgress/>

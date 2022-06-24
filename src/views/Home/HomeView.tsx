@@ -5,7 +5,7 @@ import {MoviesList} from "../../components/movies/MoviesList/MoviesList";
 export const HomeView = () => {
     return (
         <>
-            {/*<Banner/>*/}
+            <Banner/>
             <MoviesList/>
         </>
     )
