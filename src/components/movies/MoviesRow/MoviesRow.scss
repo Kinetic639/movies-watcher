@@ -1,0 +1,43 @@
+.row {
+  margin-bottom: 20px;
+  position: relative;
+
+  &__slider {
+    position: relative;
+  }
+
+  &__container {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+
+  .sliderArrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 50px;
+    height: 78%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(22, 22, 22, .5);
+    z-index: 10;
+
+    &.left {
+      left: 0;
+    }
+
+    &.right {
+      right: 0
+    }
+  }
+
+}

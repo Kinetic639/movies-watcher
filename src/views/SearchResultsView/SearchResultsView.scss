@@ -1,0 +1,11 @@
+.results {
+  padding: 65px;
+
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+
+  }
+}
