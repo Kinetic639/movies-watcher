@@ -4,6 +4,8 @@ import {CircularProgress} from "@mui/material";
 import {MovieCard} from "../../components/movies/MovieCard/MovieCard";
 
 import './SearchResultsView.scss'
+import {motion} from 'framer-motion';
+import {staggerHalf} from '../../utils/motionUtils';
 
 export const SearchResultsView = () => {
     const searchSlice = useAppSelector((state) => state.search)
@@ -17,7 +19,12 @@ export const SearchResultsView = () => {
 
         <div className='results'>
             <h3>{`Search results for: ${query}`}</h3>
-            <div className='results__grid'>
+            <motion.div
+                variants={staggerHalf}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                className='results__grid'>
                 {results && results.length > 0
                     ? results.map((movie, index) => <MovieCard row={2} movie={movie}
                                                                key={index}/>
@@ -28,7 +35,7 @@ export const SearchResultsView = () => {
                         </h2>
                     )
                 }
-            </div>
+            </motion.div>
         </div>
     )
 }
