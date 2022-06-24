@@ -121,9 +121,8 @@ export const MovieCard = ({movie, row}: Props) => {
                     </Box>
                 </Fade>
             </Modal>
-            <motion.div
-                variants={posterFadeInVariants}
-                className={`poster ${row === 0 ? 'poster__large' : null}`}
+            <div
+                className={`poster ${row === 0 ? 'poster__large' : ""}`}
                 onClick={handleOpen}
             >
 
@@ -154,7 +153,7 @@ export const MovieCard = ({movie, row}: Props) => {
                         <MoreVertIcon fontSize='large' className="poster__info--icon"/>
                     </div>
                 </div>
-            </motion.div>
+            </div>
         </>
     )
 }
