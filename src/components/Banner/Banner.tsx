@@ -42,7 +42,7 @@ export const Banner = () => {
             });
             setGenres(currentMovieGenres)
         }
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
     }, [moviesLists])
 
     if (moviesLists.moviesLists.length === 0) {

@@ -53,6 +53,7 @@ export const MovieCard = ({movie, row}: Props) => {
             return movie?.genre_ids.includes(item.id);
         });
         setGenres(currentMovieGenres)
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     if (genresList.status === 'loading') {
