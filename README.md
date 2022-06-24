@@ -1,54 +1,46 @@
-# Santa's Gifts List
+# Getting Started with Create React App
 
-Project made as a part of MegaK Bootcamp
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
 
-View App Live: [https://santas-gifts.netlify.app/](https://santas-gifts.netlify.app/)
+## Available Scripts
 
-<br/>
+In the project directory, you can run:
 
-## Technologies used
+### `npm start`
 
-### Frontend:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)![Materialui](https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white)![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) <br/>
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-Frontend was written using Typescript, React and for the state menagment I have used Redux Toolkit. Client side of the
-App i also hosted on Netlify platform. <br/>
-<br/><br/>
+### `npm test`
 
-### Backend:
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)<br/>
-Backend side consist of Node REST API using Express, It also uses Typescript and was hosted on Heroku
-<br/><br/>
+### `npm run build`
 
-### Database:
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)![Heroku](https://img.shields.io/badge/heroku-%23430098.svg?style=for-the-badge&logo=heroku&logoColor=white)<br/>
-Database for the App is MySQL database hosted via Heroku Add-ons (JawsDB MySQL)
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-<br/><br/>
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## Some interesting features
+### `npm run eject`
 
-<br/>
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-### Toast messages
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-For displaying toast messages I used library called [react-toastify](https://github.com/fkhadra/react-toastify). Toasts
-are displayed for all the action user does, like creating, editing or deleting a child or gift. They are also displayed
-when validating forms 😉
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-<img src="https://github.com/Kinetic639/megak_lista_mikolaja/blob/main/client/public/img/miniatures%20for%20readme/form_validation.gif?raw=true" align="left" height="300" width="" />
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-<br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> 
+## Learn More
 
-### Responsive Navigation
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-Navigation is fully responsive and folds into a hamburger
-
-<img src="https://github.com/Kinetic639/megak_lista_mikolaja/blob/main/client/public/img/miniatures%20for%20readme/responsive_nav.gif?raw=true" align="left" height="400" width="" />
-
-<br /><br/> <br/>
-<br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/><br/> <br/>
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9e9ae1e7-c2a4-444b-8a9a-88358a59f08c/deploy-status)](https://app.netlify.com/sites/santas-gifts/deploys)
+To learn React, check out the [React documentation](https://reactjs.org/).
