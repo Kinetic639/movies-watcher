@@ -24,6 +24,7 @@ export const App = () => {
         if (settings.status === 'succeeded' || settings.status === 'idle') {
             dispatch(getMoviesGenresAsync())
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [dispatch])
 
 
