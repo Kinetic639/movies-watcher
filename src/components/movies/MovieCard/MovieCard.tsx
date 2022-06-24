@@ -72,8 +72,11 @@ export const MovieCard = ({movie, row}: Props) => {
             >
                 <Fade in={open}>
                     <Box sx={style}>
-
-                        <img alt={fallbackTitle} className="modal__img" src={`${baseUrl}${movie.backdrop_path}`}/>
+                        {movie.backdrop_path ?
+                            <img alt={fallbackTitle} className="modal__img" src={`${baseUrl}${movie.backdrop_path}`}/> :
+                            <img alt={fallbackTitle} className="modal__img"
+                                 src={`https://www.solidbackgrounds.com/images/2560x1440/2560x1440-davys-grey-solid-color-background.jpg`}/>
+                        }
                         <motion.div variants={staggerOne} initial="initial" animate="animate" exit="exit"
                                     className="modal__info--wrp">
                             <motion.h3 variants={modalFadeInUpVariants}
